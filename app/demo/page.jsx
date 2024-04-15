@@ -25,7 +25,6 @@ const DemoPage = () => {
       await addTaskToFirebase(task);
       toast.success('Task added successfully!');
       setModalOpen(false);
-      // Reload tasks after adding
       const payload = await getToDoItems();
       setTasks(Object.entries(payload.todos || {}).reverse());
     } catch (error) {
